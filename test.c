@@ -15,6 +15,7 @@ int string_length(char* s) {
 }
 
 int main(int argc, char* argv[]) {
+	unsigned int word = 5;
 	struct Car c1;
 	struct Car c2;
 
@@ -23,21 +24,19 @@ int main(int argc, char* argv[]) {
 	c2.fuel_level = 200;
 	c2.num_doors = 5;
 
-	int *num = malloc(sizeof(int) * 5);
-	num[0] = 10;
-	num[1] = 20;
-
 	char* str = "hello";
 
-	printf("Fuel level: %d\nNumber of doors: %d\n", c1.fuel_level, c1.num_doors);
-	printf("Fuel level: %d\nNumber of doors: %d\n", c2.fuel_level, c2.num_doors);
-	printf("%d\n", *num);
-	printf("%d\n", num[1]);
+	int x = 20;
+	int *numptr = NULL;
+	numptr = &x;
 
-	printf("%d\n", string_length(str));
-	printf("%d\n", string_length(""));
+	printf("%p\n", numptr);
 
-	free(num);
+	char str_test[] = { 'H', 'e', 'l', 'l', 'o', '\0' };
+
+	//printf("%s\n", str_test);
+
+	printf("%d\n", word);
 
 	return 0;
 }
